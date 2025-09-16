@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
@@ -21,6 +22,17 @@ public class PersonaController {
         List<Persona> personas = personaService.listarPersonas();
         model.addAttribute("personasLista", personas); // clave: valor
         return "listar";
+    }
+
+    @GetMapping("/crear")
+    public String mostrarFormCrear(Model model){
+        model.addAttribute("persona", new Persona());
+        return "crear";
+    }
+
+    @PostMapping("/crear")
+    public String crearPersona(Model model){
+
     }
 
 }
