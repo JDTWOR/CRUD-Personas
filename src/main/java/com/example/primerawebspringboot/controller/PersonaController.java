@@ -33,8 +33,7 @@ public class PersonaController {
 
     @PostMapping("/crear")
     public String crearPersona(@ModelAttribute Persona persona){ // @ModelAttribute se usa para
-
-
+        return "listar";
     }
 
 }
